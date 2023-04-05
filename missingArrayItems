@@ -1,0 +1,37 @@
+//function accepts 2 lists, list1 & list2 of Any type and returns the items that are present in the list2 but not list1 or present in list2 but repeated in list2
+fun solve(list1:List<Any>,list2:List<Any>):List<Any>{
+    val result=ArrayList<Any>()
+    
+    for(item2 in list2){
+      var count=0
+      for(item1 in list1){
+        if(item1==item2){
+          count++
+        }
+      }
+      if(count!=1){
+        result.add(item2)
+      }
+    }
+    
+    return result
+}
+
+
+
+Sample results:
+1.
+Input:
+[1,2,3,4,3,4,5]
+[3,4,6]
+
+Output:
+[3, 4, 6]
+
+2.
+Input:
+["a","b","a","c","d","e"]
+["a","d","e","x"]
+
+Output:
+[a, x]
